@@ -1,0 +1,268 @@
+/* =========================================
+   PALETA / BASE
+========================================= */
+
+:root {
+  --bg: #d8cabb;
+  --bege-card: #fce9d6;
+  --verde: #497157;
+  --verde2: #2e5a3d;
+  --laranja: #ff8f63;
+  --texto: #2c2c2c;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: "Segoe UI", sans-serif;
+  color: var(--texto);
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+
+/* ==========================
+   HEADER — alinhamento fixo
+   ========================== */
+
+.header {
+    background: linear-gradient(135deg, #497157, #2e5a3d);
+    padding: 20px 0;
+    border-bottom: 3px solid #2e5a3d;
+}
+
+.header .inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand img {
+    width: 60px;
+    height: 60px;
+}
+
+.brand h1 {
+    margin: 0;
+    font-size: 1.9rem;
+    color: #fff8ee;
+    font-weight: 800;
+}
+
+.brand p {
+    margin: 0;
+    margin-top: -6px;
+    font-size: .9rem;
+    color: #e6decf;
+    font-weight: 500;
+}
+
+/* NAVBAR */
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #fff8ee;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: 0.25s;
+}
+
+.nav a:hover {
+    background: #ff8f63;
+    color: white;
+}
+
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.badge {
+  background: var(--verde);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 20px 0 10px;
+}
+
+.laranja {
+  color: var(--laranja);
+}
+
+.hero-sub {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.btn-primary {
+  background: var(--verde);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  margin-right: 14px;
+}
+
+.btn-primary:hover {
+  background: var(--laranja);
+}
+
+.btn-ghost {
+  border: 2px solid var(--verde);
+  padding: 10px 16px;
+  border-radius: 12px;
+  color: var(--verde);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.btn-ghost:hover {
+  background: var(--laranja);
+  color: white;
+  border-color: var(--laranja);
+}
+
+
+/* CARD PRINCIPAL */
+
+.hero-right {
+  display: flex;
+  justify-content: center;
+}
+
+.principal-card {
+  width: 100%;
+  max-width: 480px;
+  background: var(--bege-card);
+  border-radius: 18px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.principal-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.principal-info {
+  padding: 20px;
+}
+
+.badge-floating {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--laranja);
+  padding: 6px 14px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+}
+
+.price {
+  font-weight: 800;
+  color: var(--laranja);
+}
+
+
+/* =========================================
+   DESTAQUES
+========================================= */
+
+.destaques {
+  margin-top: 60px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: var(--verde2);
+}
+
+.destaques-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.dest-card {
+  background: var(--bege-card);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
+  transition: .2s;
+}
+
+.dest-card:hover {
+  transform: translateY(-4px);
+}
+
+.dest-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.dest-body {
+  padding: 16px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+  margin-top: 60px;
+  padding: 25px 0;
+  text-align: center;
+  background: var(--verde2);
+  color: white;
+  font-weight: 600;
+}
+
+.footer a {
+  color: var(--laranja);
+  text-decoration: none;
+}

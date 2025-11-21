@@ -1,0 +1,659 @@
+/* ============================================================
+   STYLES.CSS — Cardápio Digital Rotisserie Israel
+   Layout igual ao do seu amigo + acessibilidade (A+/A-/dark)
+   ============================================================ */
+
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Fundo bege suave, combinando com a PWA */
+body {
+  background: #faf7f4;
+  color: #2c2c2c;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   BARRA DE ACESSIBILIDADE
+   ============================================================ */
+
+.accessibility-bar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 6px 12px;
+  background: #1a472a;
+  color: #fff;
+}
+
+.accessibility-bar button {
+  border: none;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 0.9rem;
+  background: #fff;
+  color: #1a472a;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.accessibility-bar button:hover,
+.accessibility-bar button:focus-visible {
+  background: #ff6b35;
+  color: #fff;
+}
+
+/* ============================================================
+   CABEÇALHO
+   ============================================================ */
+
+.header {
+  background: linear-gradient(135deg, #497157, #2e5a3d);
+  border-bottom: 3px solid #2e5a3d;
+  color: #d8cabb;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header img {
+  height: 40px;
+  border-radius: 6px;
+  margin-right: 8px;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #d8cabb;
+}
+
+.tagline {
+  font-size: 0.95rem;
+  color: #e8ddcf;
+}
+
+/* Links Início / Sair */
+.header a {
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+
+.navbar {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-top: 3px solid #1a472a;
+}
+
+.nav-container {
+  max-width: 1200px;
+  padding: 12px 25px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-btn {
+  border: none;
+  background: #f2e6d9;
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+  background: #1a472a;
+  color: #fff;
+}
+
+/* Carrinho na navbar */
+.cart-btn-navbar {
+  background: #1a472a;
+  color: #fefefe;
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 1.2rem;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+  flex-shrink: 0;
+}
+
+.cart-btn-navbar:hover {
+  background: #ff6b35;
+}
+
+.cart-btn-navbar span {
+  position: absolute;
+  top: 5px;
+  right: 7px;
+  background: #ff6b35;
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+/* ============================================================
+   CONTEÚDO PRINCIPAL
+   ============================================================ */
+
+.main-content {
+  padding: 20px 0 40px;
+}
+
+.menu-section {
+  text-align: center;
+}
+
+#section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a472a;
+  margin-bottom: 20px;
+}
+
+/* Grid de produtos igual ao da PWA */
+.menu-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Card de produto */
+.menu-card {
+  width: 280px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.menu-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 12px 14px 16px;
+  text-align: left;
+}
+
+.card-content h3 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+  color: #1a472a;
+}
+
+.card-price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ff6b35;
+}
+
+/* ============================================================
+   MODAL DE PRODUTO
+   ============================================================ */
+
+.product-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.product-content {
+  width: 95%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px 20px 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.product-content img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.product-content h3 {
+  font-size: 1.5rem;
+  color: #1a472a;
+  margin-bottom: 6px;
+}
+
+.product-content p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.modal-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ff6b35;
+  margin: 10px 0 16px;
+}
+
+/* Botão principal do modal */
+.product-content .btn-order {
+  width: 100%;
+}
+
+/* ============================================================
+   MODAL DO CARRINHO
+   ============================================================ */
+
+.cart-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.cart-content {
+  width: 95%;
+  max-width: 460px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px 20px 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.cart-content h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #1a472a;
+  margin-bottom: 12px;
+}
+
+#cart-items {
+  max-height: 220px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item span {
+  font-size: 0.95rem;
+}
+
+.cart-item .item-name {
+  font-weight: 600;
+}
+
+.cart-item .item-qty {
+  color: #555;
+}
+
+.cart-item .item-price {
+  font-weight: 700;
+  color: #ff6b35;
+}
+
+.cart-total {
+  text-align: right;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a472a;
+  margin-top: 8px;
+}
+
+/* ============================================================
+   BOTÕES GENÉRICOS
+   ============================================================ */
+
+.btn-order {
+  background: #1a472a;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn-order:hover {
+  background: #235a36;
+  transform: translateY(-1px);
+}
+
+/* Botões do formulário do pedido */
+.modal-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.btn-finalize {
+  flex: 1;
+  background: #1a472a;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-close {
+  flex: 1;
+  background: #ff6b35;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-close:hover {
+  background: #ff8655;
+}
+
+/* ============================================================
+   FORMULÁRIO — DADOS DO CLIENTE
+   ============================================================ */
+
+.modal-form {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.modal-form input,
+.modal-form select,
+.modal-form textarea {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modal-form input:focus,
+.modal-form select:focus,
+.modal-form textarea:focus {
+  border-color: #1a472a;
+  box-shadow: 0 0 0 2px rgba(26, 71, 42, 0.15);
+}
+
+#endereco-box {
+  display: none;
+}
+
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 10px 12px;
+  }
+
+  .menu-card {
+    width: calc(50% - 15px);
+    max-width: 350px;
+  }
+
+  .menu-card img {
+    height: 150px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 520px) {
+  .menu-card {
+    width: 100%;
+    max-width: none;
+  }
+
+  .menu-card img {
+    height: 160px;
+  }
+}
+
+/* ============================================================
+   DARK MODE (CARDÁPIO)
+   ============================================================ */
+
+html.dark body {
+  background: #111;
+  color: #f5f5f5;
+}
+
+html.dark .header {
+  background: #1a1a1a;
+  border-bottom-color: #444;
+}
+
+html.dark .logo,
+html.dark .tagline {
+  color: #f5f5f5;
+}
+
+html.dark .navbar {
+  background: #1a1a1a;
+  border-top-color: #444;
+}
+
+html.dark .nav-btn {
+  background: transparent;
+  color: #f5f5f5;
+}
+
+html.dark .nav-btn:hover,
+html.dark .nav-btn.active {
+  background: #ff6b35;
+  color: #fff;
+}
+
+html.dark .menu-card {
+  background: #262626;
+  color: #f5f5f5;
+}
+
+html.dark .card-content h3,
+html.dark .card-price {
+  color: #f5f5f5;
+}
+
+html.dark .product-content,
+html.dark .cart-content {
+  background: #262626;
+  color: #f5f5f5;
+}
+
+
+/* Botão principal */
+.accessibility-btn {
+    background: #1a472a;
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.accessibility-btn:hover {
+    background: #ff8f63;
+}
+
+/* Modal de acessibilidade */
+#accessibility-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+}
+
+.accessibility-content {
+    background: #fff8ee;
+    padding: 25px;
+    max-width: 420px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    text-align: center;
+}
+
+.accessibility-content h2 {
+    margin-bottom: 15px;
+    color: #1a472a;
+}
+
+.accessibility-content button {
+    width: 100%;
+    margin: 6px 0;
+    padding: 10px;
+    background: #1a472a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.accessibility-content button:hover {
+    background: #ff8f63;
+}
+
+/* Contraste alto */
+.high-contrast {
+    filter: invert(100%) contrast(120%);
+}
+
+/* Desativar animações */
+.no-animation * {
+    animation: none !important;
+    transition: none !important;
+}
+
+/* DARK MODE simples */
+.dark-mode {
+  background: #111 !important;
+  color: #f5f5f5 !important;
+}
+
+.dark-mode .menu-card,
+.dark-mode .product-content,
+.dark-mode .cart-content {
+  background: #222 !important;
+  color: #fff !important;
+}
+
+.dark-mode .nav-btn {
+  background: #444 !important;
+  color: #fff !important;
+}
+
+.dark-mode .header {
+  background: #000 !important;
+}

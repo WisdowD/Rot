@@ -1,0 +1,139 @@
+/* Modal Acessibilidade */
+#accessibility-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.accessibility-content {
+    background: #fff8ee;
+    padding: 25px;
+    width: 90%;
+    max-width: 420px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+
+.accessibility-content h2 {
+    margin-bottom: 15px;
+    color: #1a472a;
+}
+
+.accessibility-content button {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #1a472a;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.accessibility-content button:hover {
+    background: #ff8f63;
+}
+
+/* Alto Contraste */
+/* Alta acessibilidade — esquema real de alto contraste */
+.high-contrast {
+    background: #000 !important;
+    color: #fff !important;
+}
+
+.high-contrast * {
+    background-color: #000 !important;
+    color: #fff !important;
+    border-color: #fff !important;
+    box-shadow: none !important;
+}
+
+
+/* Remover animações */
+.no-animation * {
+    animation: none !important;
+    transition: none !important;
+}
+
+.btn-read {
+    margin-top: 8px;
+    background: #497157;
+    color: #fff;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+.btn-read:hover {
+    background: #ff8f63;
+}
+
+.acc-font-btn {
+    background: #fff;
+    color: #1a472a;
+    border: 2px solid #1a472a;
+    width: 48%;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.acc-font-btn:hover {
+    background: #1a472a;
+    color: #fff;
+}
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #1a472a;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translateY(20px);
+    z-index: 9999;
+}
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.font-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.font-btn {
+    background: #2e5a3d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid #3f7a52;
+    transition: 0.2s;
+}
+
+.font-btn:hover {
+    background: #ff8f63;
+    border-color: #ff8f63;
+}
